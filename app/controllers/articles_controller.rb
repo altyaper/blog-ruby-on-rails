@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @articles = Article.order(params[:sort])
   end
@@ -46,7 +48,8 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:description, :image, :status, :category_id)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :description, :image, :status, :category_id)
+  end
 end

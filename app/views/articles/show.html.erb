@@ -1,22 +1,28 @@
-<h1><%= @article.description %></h1>
-
-<p>Image: 
-    <% if @article.image.attached? %>
-        <%= link_to @article.image.filename, rails_blob_path(@article.image, disposition: 'attachment') %> </p>
-    <% end %>
-
-
-<p>Status: <%= @article.status == "1" ? "Active" : "Inactive" %></p>
-
-<p>Category: <%= @article.category_description %></p>
-
-<p>User: <%= @article.user_email %></p>
-
-<%= link_to "Edit", edit_article_path(@article) %>
-
-<%= link_to "Destroy", article_path(@article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+<div class='container mt-big'>
+  <div class="row">
+    <div class="col inner-padding card col-12 align-self-center">
+      <h1><%= @article.title %></h1>
+      <p><%= @article.description %></p>
+      <%= image_tag(@article.image, class: 'thumbnail') %>
 
 
-<%= link_to "Articles", articles_path(@articles) %>
+      <p>Status: <%= @article.status == "1" ? "Active" : "Inactive" %></p>
+
+      <p>Category: <%= @article.category_description %></p>
+
+      <p>User: <%= @article.user_email %></p>
+
+      <div class="button-actions">
+        <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-secondary mr' %>
+
+        <%= link_to "Destroy", article_path(@article),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class: 'btn btn-danger mr' %>
+
+
+        <%= link_to "Articles", articles_path(@articles), class: 'btn btn-link' %>
+      </div>
+    </div>
+  </div>
+</div>

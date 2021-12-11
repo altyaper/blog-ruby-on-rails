@@ -1,29 +1,36 @@
-<h1>Categories</h1>
+<div class='container mt-big'>
+  <div class="row">
+    <div class="col inner-padding card col-12 align-self-center">
+      <div class="justify-content-md-center">
+      <h1>Categories</h1>
+      <%= link_to "New Category", new_category_path, class: 'btn btn-primary' %>
+      </div>
+      <table class='table'>
+        <tr>
+          <th class= "col-4">Description</th>
+          <th class= "col-2">Status</th>
+          <th class= "col-2">User</th>
+        </tr>
 
-<table>
-  <tr>
-    <th class= "col-4">Description</th>
-    <th class= "col-2">Status</th>
-    <th class= "col-2">User</th>
-  </tr>
+        <% @categories.each do |category| %>
+          <tr>
+            <td>
+              <%= link_to category.description, category %>
+            </td>
+            <td>
+              <%= category.status %>
+            </td>
+            <td>
+              <%= category.user_email %>
+            </td>
+          </tr>
 
-  <% @categories.each do |category| %>
-    <tr>
-      <td>
-        <%= link_to category.description, category %>
-      </td>
-      <td>
-        <%= category.status %>
-      </td>
-      <td>
-        <%= category.user_email %>
-      </td>
-    </tr>
+        <% end %>
+      </table>
 
-  <% end %>
-</table>
+      <br>
+      <%= link_to "Articles", articles_path %>
 
-<br>
-<%= link_to "New Category", new_category_path %>
-<%= link_to "Articles", articles_path %>
-
+    </div>
+  </div>
+</div>

@@ -1,42 +1,46 @@
-<h1>Articles</h1>
+<div class='container mt-big'>
+  <div class="row">
+    <div class="col inner-padding card col-12 align-self-center">
+      <div class="justify-content-md-center">
+        <h1>Articles</h1>
+        <%= link_to "New Article", new_article_path, class: 'btn btn-primary' %>
+      </div>
+      <table id="dtBasicExample" class="mt table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th><%= link_to "Title", :sort => "title"%> </th>
+            <th><%= link_to "Image", :sort => "image"%> </th>
+            <th><%= link_to "Status", :sort => "status"%> </th>
+            <th><%= link_to "Category Description", :sort => "category_id"%> </th>
+            <th><%= link_to "User", :sort => "user_id"%> </th>
+          </tr>
+        </thead>
 
-<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th><%= link_to "Description", :sort => "description"%> </th>
-      <th><%= link_to "Image", :sort => "image"%> </th>
-      <th><%= link_to "Status", :sort => "status"%> </th>
-      <th><%= link_to "Category Description", :sort => "category_id"%> </th>
-      <th><%= link_to "User", :sort => "user_id"%> </th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr>
+              <td>
+                <%= link_to article.title, article %>
+              </td>
+              <td>
+                <%= article.image.filename %>
+              </li>
+              <td>
+                <%= article.status == "1" ? "Active" : "Inactive" %></p>
+              </td>
+              <td>
+                <%= article.category_description %>
+              </td>
+              <td>
+                <%= article.user_email %>
+              </td>
+            </tr>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td>
-          <%= link_to article.description, article %>
-        </td>
-        <td>
-          <%= article.image.filename %>
-        </li>
-        <td>
-          <%= article.status == "1" ? "Active" : "Inactive" %></p>
-        </td>
-        <td>
-          <%= article.category_description %>
-        </td>
-        <td>
-          <%= article.user_email %>
-        </td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to "New Article", new_article_path %>
-
-<br>
-<%= link_to "Categories", categories_path %>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to "Categories", categories_path %>
+    </div>
+  </div>
+</div>

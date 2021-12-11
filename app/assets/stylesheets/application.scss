@@ -10,7 +10,30 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+
+ @import "articles";
+ @import "device";
+ 
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.navbat-top {
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 10px 20px;
+}
+
+.mt-big {
+  margin-top: 100px;
+}

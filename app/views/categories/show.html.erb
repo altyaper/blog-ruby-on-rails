@@ -1,13 +1,25 @@
-<h1><%= @category.description %></h1>
+<div class='container mt-big'>
+  <div class="row">
+    <div class="col inner-padding card col-12 align-self-center">
+      <h1><%= @category.description %></h1>
 
-<p>Status: <%= @category.status %></p>
+      <p>Status: <%= @category.status %></p>
 
-<p>User: <%= @category.user_email %></p>
+      <p>User: <%= @category.user_email %></p>
 
-<%= link_to "Edit", edit_category_path(@category) %>
+      <div class="button-actions">
+        <%= link_to "Edit", edit_category_path(@category), class: 'btn btn-secondary mr' %>
 
-<%= link_to "Destroy", category_path(@category),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+        <%= link_to "Destroy", category_path(@category),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class: 'btn btn-danger mr' %>
 
-<%= link_to "Categories", categories_path %>
+        <%= link_to "Categories", categories_path, class: 'btn btn-link' %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

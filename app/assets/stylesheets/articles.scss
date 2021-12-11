@@ -2,15 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before {
-    bottom: .5em;
+.article-wrapper {
+  margin-bottom: 40px;
+  display: block;
+  .article-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+  }
+
+  .article-title {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .article-description {
+    color: #474747;
+  }
+  img  {
+    max-width: 100%;
+  }
 }
