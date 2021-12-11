@@ -1,0 +1,35 @@
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <% article.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select("status", [["Active", 1],["Inactive", 2]], { include_blank: true }) %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.label :category_id %><br>
+    <%= form.select("category_id", Category.all.collect {|c| [c.description, c.id ] }, { include_blank: true }) %>
+    <% article.errors.full_messages_for(:category_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

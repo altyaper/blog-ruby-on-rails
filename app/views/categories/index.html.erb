@@ -1,0 +1,29 @@
+<h1>Categories</h1>
+
+<table>
+  <tr>
+    <th class= "col-4">Description</th>
+    <th class= "col-2">Status</th>
+    <th class= "col-2">User</th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td>
+        <%= link_to category.description, category %>
+      </td>
+      <td>
+        <%= category.status %>
+      </td>
+      <td>
+        <%= category.user_email %>
+      </td>
+    </tr>
+
+  <% end %>
+</table>
+
+<br>
+<%= link_to "New Category", new_category_path %>
+<%= link_to "Articles", articles_path %>
+

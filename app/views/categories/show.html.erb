@@ -1,0 +1,13 @@
+<h1><%= @category.description %></h1>
+
+<p>Status: <%= @category.status %></p>
+
+<p>User: <%= @category.user_email %></p>
+
+<%= link_to "Edit", edit_category_path(@category) %>
+
+<%= link_to "Destroy", category_path(@category),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Categories", categories_path %>

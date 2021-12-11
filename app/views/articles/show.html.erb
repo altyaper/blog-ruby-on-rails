@@ -1,0 +1,22 @@
+<h1><%= @article.description %></h1>
+
+<p>Image: 
+    <% if @article.image.attached? %>
+        <%= link_to @article.image.filename, rails_blob_path(@article.image, disposition: 'attachment') %> </p>
+    <% end %>
+
+
+<p>Status: <%= @article.status == "1" ? "Active" : "Inactive" %></p>
+
+<p>Category: <%= @article.category_description %></p>
+
+<p>User: <%= @article.user_email %></p>
+
+<%= link_to "Edit", edit_article_path(@article) %>
+
+<%= link_to "Destroy", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
+
+<%= link_to "Articles", articles_path(@articles) %>
