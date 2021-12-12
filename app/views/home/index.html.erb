@@ -1,10 +1,17 @@
-<div class='container mt-big'>
+<div class='container mt-medium'>
   <div class="row">
     <div class="col inner-padding offset-md-3 col-6 align-self-center">
+      <% if @articles.length == 0 %>
+        <div class="card text-center inner-padding">
+          No news found
+        </div>
+      <% end %>
       <% @articles.each do |article| %>
 
         <%= link_to article, class: 'article-wrapper'  do %>
+          <% if article.image.persisted? %>
           <%= image_tag(article.image) %>
+          <% end %>
           <div class='article-content'>
             <h4 class="article-title"><%= article.title %></h4>
             <p class="article-description mt"><%= article.description %></p>

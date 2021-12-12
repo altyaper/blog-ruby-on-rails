@@ -3,13 +3,11 @@
     <div class="col inner-padding card col-12 align-self-center">
       <h1><%= @article.title %></h1>
       <p><%= @article.description %></p>
-      <%= image_tag(@article.image, class: 'thumbnail') %>
-
-
+      <% if @article.image.persisted? %>
+        <%= image_tag(@article.image, class: 'thumbnail') %>
+      <% end %>
       <p>Status: <%= @article.status == "1" ? "Active" : "Inactive" %></p>
-
       <p>Category: <%= @article.category_description %></p>
-
       <p>User: <%= @article.user_email %></p>
 
       <div class="button-actions">

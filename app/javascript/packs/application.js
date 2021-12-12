@@ -16,3 +16,12 @@ ActiveStorage.start()
 
 window.jQuery = $;
 window.$ = $;
+
+window.loadfile = (event) => {
+  var output = document.getElementById('output');
+  output.src = URL.createObjectURL(event.target.files[0]);
+  output.onload = () => {
+    $("#thumbnail-wrapper").show();
+    URL.revokeObjectURL(output.src) // free memory
+  }
+}
