@@ -1,24 +1,36 @@
-# README
+# News CMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Dependencies
+Ruby 2.7.1
+Rails 6.1.4.1
+npm 6.14.6
+node v12.18.3 (can be a lower version too)
+PostgreSQL 13.3
 
-Things you may want to cover:
+# Install dependencies
+```
+bundle install
+```
+```
+npm install
+```
 
-* Ruby version
+# Prepare database
 
-* System dependencies
+```
+rake db:setup
+```
 
-* Configuration
+```
+rake db:seed
+```
 
-* Database creation
+# Run the app
+```
+rails server
+```
 
-* Database initialization
+### Author
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Name: Jorge Enrique Chavez Palma
+Matricula: 241656
