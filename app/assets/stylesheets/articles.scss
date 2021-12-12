@@ -20,7 +20,27 @@
 .article-wrapper {
   margin-bottom: 40px;
   display: block;
+  position: relative;
 
+  .article-top {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 0 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .article-author {
+    color: gray;
+    font-size: 12px;
+    margin-right: auto;
+  }
+
+  .article-category {
+
+  }
 
   .article-content {
     padding: 20px;

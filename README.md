@@ -30,6 +30,10 @@ rake db:seed
 rails server
 ```
 
+# Deployed app
+
+https://ndenoticia.herokuapp.com/
+
 ### Author
 
 Name: Jorge Enrique Chavez Palma

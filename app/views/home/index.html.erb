@@ -10,9 +10,15 @@
 
         <%= link_to article, class: 'article-wrapper'  do %>
           <% if article.image.persisted? %>
-          <%= image_tag(article.image) %>
+            <%= image_tag(article.image) %>
           <% end %>
           <div class='article-content'>
+            <div class="article-top">
+              <span class="badge bg-light text-dark article-author">Por: <%= article.user.name %></span>
+              <span class="badge bg-primary article-category">
+                <%= article.category.description %>
+              </span>
+            </div>
             <h4 class="article-title"><%= article.title %></h4>
             <p class="article-description mt"><%= article.description %></p>
           </div>
