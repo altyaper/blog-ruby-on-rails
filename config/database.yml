@@ -23,4 +23,6 @@ test:
 
 production:
   <<: *default
-  database: news_production
+  database: <%= ENV.fetch("NEWS_DB_DATABASE") %>
+  username: <%= ENV.fetch("NEWS_DB_USERNAME") %>
+  password: <%= ENV.fetch("NEWS_DB_PASSWORD") %>
